@@ -1,5 +1,4 @@
 import React from 'react'
-import { withPrefix } from 'gatsby'
 import RootElement from './src/components/root-element'
 
 export const wrapRootElement = ({ element }) => {
@@ -11,7 +10,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     <link
       key="Inconsolata-Bold-w2"
       rel="preload"
-      href={`${withPrefix('/')}fonts/Inconsolata-Bold.woff2`}
+      href="/fonts/Inconsolata-Bold.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -19,7 +18,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     <link
       key="Inconsolata-Regular-w2"
       rel="preload"
-      href={`${withPrefix('/')}fonts/Inconsolata-Regular.woff2`}
+      href="/fonts/Inconsolata-Regular.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -27,7 +26,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     <link
       key="Inconsolata-Light-w2"
       rel="preload"
-      href={`${withPrefix('/')}fonts/Inconsolata-Light.woff2`}
+      href="/fonts/Inconsolata-Light.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -41,30 +40,24 @@ export const onRenderBody = ({ setHeadComponents }) => {
         font-style: normal;
         font-weight: 700;
         font-display: swap;
-        src: url(${withPrefix(
-          '/'
-        )}fonts/Inconsolata-Bold.woff2) format('woff2'),
-          url(${withPrefix('/')}fonts/Inconsolata-Bold.woff) format('woff');
+        src: url(/fonts/Inconsolata-Bold.woff2) format('woff2'),
+          url(/fonts/Inconsolata-Bold.woff) format('woff');
       }
       @font-face {
         font-family: 'Inconsolata-Regular';
         font-style: normal;
         font-weight: 400;
         font-display: swap;
-        src: url(${withPrefix(
-          '/'
-        )}fonts/Inconsolata-Regular.woff2) format('woff2'),
-          url(${withPrefix('/')}fonts/Inconsolata-Regular.woff) format('woff');
+        src: url(/fonts/Inconsolata-Regular.woff2) format('woff2'),
+          url(/fonts/Inconsolata-Regular.woff) format('woff');
       }
       @font-face {
         font-family: 'Inconsolata-Light';
         font-style: normal;
         font-weight: 300;
         font-display: swap;
-        src: url(${withPrefix(
-          '/'
-        )}fonts/Inconsolata-Light.woff2) format('woff2'),
-          url(${withPrefix('/')}fonts/Inconsolata-Light.woff) format('woff');
+        src: url(/fonts/Inconsolata-Light.woff2) format('woff2'),
+          url(/fonts/Inconsolata-Light.woff) format('woff');
       }
     `,
       }}

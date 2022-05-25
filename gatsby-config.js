@@ -3,7 +3,6 @@ require('dotenv').config({
 })
 
 module.exports = {
-  pathPrefix: '/demos/rise-of-the-robots',
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-image',
