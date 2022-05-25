@@ -1,15 +1,10 @@
-import React, { lazy, Suspense } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
 import ContentfulRichTech from '../components/contentful-rich-text'
 
-import Loading from '../components/loading'
-import usePerfLoading from '../hooks/use-perf-loading'
-
-const GatsbyBot = lazy(() => import('../robots/gatsby-bot'))
+import GatsbyBot from '../robots/gatsby-bot'
 
 const GatsbySection = () => {
-  const perfLoader = usePerfLoading()
   const { contentfulGatsbySection } = useStaticQuery(graphql`
     {
       contentfulGatsbySection {
@@ -65,13 +60,7 @@ const GatsbySection = () => {
           className="gatsby-border"
         />
 
-        {perfLoader ? (
-          <StaticImage src="../robots/gatsby-bot.png" alt="Gatsby Bot Image" />
-        ) : (
-          <Suspense fallback={<Loading />}>
-            <GatsbyBot />
-          </Suspense>
-        )}
+        <GatsbyBot />
       </div>
     </div>
   )

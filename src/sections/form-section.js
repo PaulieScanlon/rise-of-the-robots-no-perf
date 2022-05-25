@@ -1,17 +1,11 @@
-import React, { useState, useRef, lazy, Suspense } from 'react'
+import React, { useState, useRef } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
-
 import ContentfulRichTech from '../components/contentful-rich-text'
-
 import MarketoForm from '../components/marketo-form'
-import Loading from '../components/loading'
-import usePerfLoading from '../hooks/use-perf-loading'
 
-const FormBot = lazy(() => import('../robots/form-bot'))
+import FormBot from '../robots/form-bot'
 
 const FormSection = () => {
-  const perfLoader = usePerfLoading()
   const [email, setEmail] = useState('')
   const [successMsg, setSuccessMsg] = useState()
   const [submittingMsg, setSubmittingMsg] = useState()
@@ -87,21 +81,11 @@ const FormSection = () => {
           className="form-border"
         />
 
-        {perfLoader ? (
-          <StaticImage
-            className="form-image"
-            src="../robots/form-bot.png"
-            alt="Form Bot Image"
-          />
-        ) : (
-          <Suspense fallback={<Loading />}>
-            <FormBot
-              hasError={Boolean(errorMsg)}
-              isSubmitting={Boolean(submittingMsg)}
-              isSuccess={Boolean(successMsg)}
-            />
-          </Suspense>
-        )}
+        <FormBot
+          hasError={Boolean(errorMsg)}
+          isSubmitting={Boolean(submittingMsg)}
+          isSuccess={Boolean(successMsg)}
+        />
       </div>
       <div className="grid gap-8 row-start-1 lg:row-auto text-center mx-auto max-w-section">
         <div className="grid gap-2">
